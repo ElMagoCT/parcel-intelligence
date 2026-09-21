@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy &mdash; AliExpress Parcel Intelligence</title>
+<meta name="description" content="Privacy policy for the AliExpress Parcel Intelligence Chrome extension. All data stays in the user's browser; nothing is sent to the developer.">
+<link rel="icon" href="img/icon.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">
+      <img src="img/icon.png" alt="">
+      <div>
+        <h1>Privacy Policy</h1>
+        <p>AliExpress Parcel Intelligence (Chrome extension)</p>
+      </div>
+    </div>
+    <p class="updated">Last updated: 20 September 2026</p>
+  </header>
+
+  <main>
+    <div class="card key">
+      <h3>The short version</h3>
+      <p style="margin-bottom:0">AliExpress Parcel Intelligence shows you your own AliExpress orders, parcels and spending on a map and dashboard. It is built around one rule: <strong>your data never leaves your browser.</strong> There is no account, no backend server, no analytics and no telemetry. The developer receives nothing.</p>
+    </div>
+
+    <h2>What the extension reads</h2>
+    <p>While you are signed in to AliExpress in your own browser, the extension reads the order, tracking and returns/refunds information that AliExpress already sends to your browser:</p>
+    <ul>
+      <li>Your order list: order IDs, dates, sellers, item titles, images, quantities, prices and totals.</li>
+      <li>Parcel tracking detail: tracking numbers, carriers, scan events and estimated delivery dates.</li>
+      <li>Returns and refunds: case status, reason and refunded amount.</li>
+      <li>On product pages, the shipping options shown to you, so a delivery estimate can be displayed next to them.</li>
+    </ul>
+    <p>The extension is read-only with respect to your AliExpress account. It never places orders, opens disputes, sends messages, or changes anything in your account.</p>
+
+    <h2>Where it is stored</h2>
+    <p>Everything is stored locally in your browser profile, using IndexedDB and <code>chrome.storage.local</code>. Nothing is uploaded to the developer or to any third party. Data is not synced between your devices.</p>
+
+    <h2>Network requests the extension makes</h2>
+    <table>
+      <thead><tr><th>Destination</th><th>Why</th></tr></thead>
+      <tbody>
+        <tr><td><code>aliexpress.com</code><br><code>aliexpress.us</code></td><td>The same order and tracking endpoints your browser already uses, with your own existing session, to refresh your orders, parcels and refunds.</td></tr>
+        <tr><td><code>global.cainiao.com</code></td><td>Public parcel tracking lookups by tracking number, used as a fallback source of scan events.</td></tr>
+        <tr><td><code>server.arcgisonline.com</code></td><td>Map tiles from Esri&rsquo;s public tile service, to draw the base map. Tile requests contain only the map area being viewed.</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Optional, off by default</h3>
+    <p>These are only ever contacted if you explicitly enable them in the extension&rsquo;s Settings, and Chrome asks for the host permission at that moment:</p>
+    <table>
+      <thead><tr><th>Destination</th><th>Why</th></tr></thead>
+      <tbody>
+        <tr><td><code>nominatim.openstreetmap.org</code></td><td>Geocoding scan location names that the bundled offline gazetteer does not recognise. Place names only, rate-limited to one request per second, cached permanently.</td></tr>
+        <tr><td><code>open.er-api.com</code></td><td>Exchange rates, refreshed at most weekly, so spend in several currencies can be shown in one.</td></tr>
+        <tr><td><code>api.anthropic.com</code></td><td>Only if you supply your own Anthropic API key: unrecognised carrier scan text, unrecognised location names, and the on-demand &ldquo;Explain this parcel&rdquo; button. Your key is stored only in <code>chrome.storage.local</code>, is never synced, and is never sent anywhere except to Anthropic&rsquo;s API on your behalf. A hard daily call budget applies, defaulting to five calls per day.</td></tr>
+      </tbody>
+    </table>
+
+    <h2>What the developer receives</h2>
+    <p>Nothing. The extension has no backend. No usage data, crash reports, identifiers or order information are collected or transmitted to the developer.</p>
+
+    <h2>Data sharing and sale</h2>
+    <p>Your data is not sold, rented, shared or transferred to any third party. It is not used for advertising, profiling, creditworthiness or lending decisions, and it is not used for any purpose unrelated to the extension&rsquo;s single purpose of displaying your own orders and parcels to you.</p>
+
+    <h2>Your control over the data</h2>
+    <ul>
+      <li><strong>Export.</strong> Settings offers a full export of everything stored, as JSON.</li>
+      <li><strong>Import.</strong> A previously exported file can be restored.</li>
+      <li><strong>Delete.</strong> A &ldquo;Wipe everything&rdquo; button in Settings permanently deletes all locally stored data.</li>
+      <li><strong>Uninstall.</strong> Removing the extension deletes its storage along with it.</li>
+    </ul>
+
+    <h2>Permissions and why they are needed</h2>
+    <table>
+      <thead><tr><th>Permission</th><th>Purpose</th></tr></thead>
+      <tbody>
+        <tr><td><code>storage</code>, <code>unlimitedStorage</code></td><td>Stores your order, parcel and scan history locally. Histories of several hundred orders exceed the default quota.</td></tr>
+        <tr><td><code>alarms</code></td><td>Schedules periodic background refreshes of orders and tracking.</td></tr>
+        <tr><td><code>notifications</code></td><td>Notifies you of deliveries, stalled parcels and approaching buyer-protection deadlines.</td></tr>
+        <tr><td><code>scripting</code></td><td>Registers the page script that mirrors AliExpress&rsquo;s own order and tracking responses, so the extension does not have to scrape rendered HTML.</td></tr>
+        <tr><td><code>cookies</code></td><td>Reads the <code>_m_h5_tk</code> token cookie on aliexpress.com, which AliExpress requires to sign its own API requests when the extension refreshes your orders in the background using your existing session.</td></tr>
+        <tr><td>Host access to AliExpress and Cainiao</td><td>Reading your own order and tracking data, and injecting the delivery-estimate badge on product pages.</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Children</h2>
+    <p>The extension is not directed at children and collects no data from anyone.</p>
+
+    <h2>Changes to this policy</h2>
+    <p>If this policy changes, the updated version will be published on this page with a new date at the top.</p>
+
+    <h2>Contact</h2>
+    <p>Questions about this policy can be raised as an issue on the <a href="https://github.com/ElMagoCT/parcel-intelligence">project repository</a>.</p>
+
+    <p style="margin-top:36px"><a class="btn ghost" href="index.html">&larr; Back</a></p>
+  </main>
+
+  <footer>
+    <p>Not affiliated with AliExpress, Alibaba or Cainiao.</p>
+  </footer>
+</div>
+</body>
+</html>

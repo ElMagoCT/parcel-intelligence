@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AliExpress Parcel Intelligence</title>
+<meta name="description" content="A Chrome extension that shows every AliExpress parcel on a map with delivery estimates learned from your own history. All data stays in your browser.">
+<link rel="icon" href="img/icon.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">
+      <img src="img/icon.png" alt="">
+      <div>
+        <h1>AliExpress Parcel Intelligence</h1>
+        <p>Chrome extension &middot; local-only</p>
+      </div>
+    </div>
+    <p class="tagline">Every parcel you&rsquo;ve ordered on a map, with delivery windows built from <em>your</em> delivery history &mdash; not AliExpress&rsquo;s optimistic promise.</p>
+    <div class="chips">
+      <span class="chip">Map &amp; routes</span>
+      <span class="chip">P50&ndash;P80 estimates</span>
+      <span class="chip">Stall &amp; dispute alerts</span>
+      <span class="chip">Spend analytics</span>
+      <span class="chip">No account, no server</span>
+    </div>
+    <a class="btn" href="privacy.html">Privacy policy</a>
+  </header>
+
+  <main>
+    <img class="shot" src="img/map.png" alt="Map view showing active parcels, their travelled routes and a details panel">
+
+    <h2>What it does</h2>
+    <ul>
+      <li><strong>Map.</strong> Every active parcel at its last known position, the route it has travelled, and the projected remainder to your door. Orders shipped together in one box appear as a single marker.</li>
+      <li><strong>Delivery estimates.</strong> A P50&ndash;P80 window per parcel, re-estimated on every scan, built from how long your past parcels actually took from the same stage with the same carrier. Shown side by side with AliExpress&rsquo;s promised date.</li>
+      <li><strong>Timeline.</strong> All in-transit parcels as bars sorted by expected arrival.</li>
+      <li><strong>Alerts.</strong> Stalled parcels, carrier exceptions, running-late warnings, and a buyer-protection countdown so the window to open a dispute never passes unnoticed.</li>
+      <li><strong>Finance.</strong> Lifetime and net spend, spend by month, seller and category, shipping share, refunds and cancellations, CSV and JSON export.</li>
+      <li><strong>On product pages.</strong> &ldquo;Your history: 14&ndash;24 days&rdquo; next to each shipping option, based on your own parcels with that carrier.</li>
+    </ul>
+
+    <img class="shot" src="img/finance.png" alt="Finance view with net spend, refunds and spend by month">
+
+    <h2>How it works</h2>
+    <p>While you browse your own AliExpress orders, signed in to your own browser, the extension reads the same order and tracking data AliExpress already sends to the page and keeps a local copy. A one-click backfill walks your whole order history. Everything is stored in your browser profile.</p>
+
+    <div class="card key">
+      <h3>Your data never leaves your browser</h3>
+      <p class="muted" style="margin-bottom:0">No account, no backend, no analytics, no telemetry. The developer receives nothing. Read the <a href="privacy.html">full privacy policy</a> for the complete list of network requests.</p>
+    </div>
+
+    <h2>Optional extras, off by default</h2>
+    <p>Bring your own Anthropic API key to classify unusual carrier scan text, geocode odd location names, or get a plain-language explanation of a parcel&rsquo;s journey. The extension is fully functional without one.</p>
+  </main>
+
+  <footer>
+    <p>Not affiliated with AliExpress, Alibaba or Cainiao.<br>
+    <a href="privacy.html">Privacy policy</a></p>
+  </footer>
+</div>
+</body>
+</html>
