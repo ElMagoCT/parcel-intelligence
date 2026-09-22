@@ -10,4 +10,6 @@ The extension shows your own AliExpress orders and parcels on a map, with delive
 learned from your own delivery history. All of its data stays in your browser: no account,
 no backend, no telemetry.
 
-This repository contains only the public website. It is not the extension source.
+This repository contains only the public website.
+The extension source lives at
+<https://github.com/ElMagoCT/aliexpress-parcel-intelligence>.
