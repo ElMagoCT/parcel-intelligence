@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Privacy Policy &mdash; AliExpress Parcel Intelligence</title>
+<title>Privacy Policy &mdash; Parcel Intelligence</title>
 <meta name="description" content="Privacy policy for the AliExpress Parcel Intelligence Chrome extension. All data stays in the user's browser; nothing is sent to the developer.">
 <link rel="icon" href="img/icon.png">
 <link rel="stylesheet" href="style.css">
@@ -15,16 +15,16 @@
       <img src="img/icon.png" alt="">
       <div>
         <h1>Privacy Policy</h1>
-        <p>AliExpress Parcel Intelligence (Chrome extension)</p>
+        <p>Parcel Intelligence (Chrome extension)</p>
       </div>
     </div>
-    <p class="updated">Last updated: 20 September 2026</p>
+    <p class="updated">Last updated: 22 September 2026</p>
   </header>
 
   <main>
     <div class="card key">
       <h3>The short version</h3>
-      <p style="margin-bottom:0">AliExpress Parcel Intelligence shows you your own AliExpress orders, parcels and spending on a map and dashboard. It is built around one rule: <strong>your data never leaves your browser.</strong> There is no account, no backend server, no analytics and no telemetry. The developer receives nothing.</p>
+      <p style="margin-bottom:0">Parcel Intelligence shows you your own orders, parcels and spending on a map and dashboard. It is built around one rule: <strong>your data never leaves your browser.</strong> There is no account, no backend server, no analytics and no telemetry. The developer receives nothing.</p>
     </div>
 
     <h2>What the extension reads</h2>
@@ -35,6 +35,15 @@
       <li>Returns and refunds: case status, reason and refunded amount.</li>
       <li>On product pages, the shipping options shown to you, so a delivery estimate can be displayed next to them.</li>
     </ul>
+
+    <h3>When you click the toolbar button</h3>
+    <p>The extension can capture an item from a page on any website &mdash; the toolbar popup reads the
+    page&rsquo;s title, its product image, its price and any tracking number on it, so you can save a
+    purchase from a store the extension does not sync. This uses Chrome&rsquo;s <code>activeTab</code>
+    permission, which means it can only ever read the one tab you are looking at, only at the moment
+    you click the button, and never in the background. What it reads is shown to you for editing
+    before anything is saved, and it is saved only to your own browser. No page content is sent
+    anywhere.</p>
     <p>The extension is read-only with respect to your AliExpress account. It never places orders, opens disputes, sends messages, or changes anything in your account.</p>
 
     <h2>Where it is stored</h2>
@@ -84,6 +93,7 @@
         <tr><td><code>notifications</code></td><td>Notifies you of deliveries, stalled parcels and approaching buyer-protection deadlines.</td></tr>
         <tr><td><code>scripting</code></td><td>Registers the page script that mirrors AliExpress&rsquo;s own order and tracking responses, so the extension does not have to scrape rendered HTML.</td></tr>
         <tr><td><code>cookies</code></td><td>Reads the <code>_m_h5_tk</code> token cookie on aliexpress.com, which AliExpress requires to sign its own API requests when the extension refreshes your orders in the background using your existing session.</td></tr>
+        <tr><td><code>activeTab</code></td><td>Lets the toolbar popup read the page you are looking at, only when you click the button, to capture an item&rsquo;s image, price and tracking number.</td></tr>
         <tr><td>Host access to AliExpress and Cainiao</td><td>Reading your own order and tracking data, and injecting the delivery-estimate badge on product pages.</td></tr>
       </tbody>
     </table>
