@@ -60,10 +60,11 @@
     </table>
 
     <h3>Optional, off by default</h3>
-    <p>These are only ever contacted if you explicitly enable them in the extension&rsquo;s Settings, and Chrome asks for the host permission at that moment:</p>
+    <p>These are only ever contacted if you explicitly ask for them, and Chrome asks for the host permission at that moment:</p>
     <table>
       <thead><tr><th>Destination</th><th>Why</th></tr></thead>
       <tbody>
+        <tr><td>A carrier&rsquo;s own tracking site<br><code>ups.com</code>, <code>tools.usps.com</code>, <code>fedex.com</code>, <code>dhl.com</code>, and the others listed in the extension</td><td>Only when you click &ldquo;Read scans from &lt;carrier&gt;&rdquo; on a parcel. Access is requested for that one carrier, its public tracking page for your tracking number is opened in a background tab, the page is read, and the tab is closed. No carrier API or key is involved and nothing is transmitted &mdash; it is the same page the tracking link opens, read for you rather than by you.</td></tr>
         <tr><td><code>nominatim.openstreetmap.org</code></td><td>Geocoding scan location names that the bundled offline gazetteer does not recognise. Place names only, rate-limited to one request per second, cached permanently.</td></tr>
         <tr><td><code>open.er-api.com</code></td><td>Exchange rates, refreshed at most weekly, so spend in several currencies can be shown in one.</td></tr>
         <tr><td><code>api.anthropic.com</code></td><td>Only if you supply your own Anthropic API key: unrecognised carrier scan text, unrecognised location names, and the on-demand &ldquo;Explain this parcel&rdquo; button. Your key is stored only in <code>chrome.storage.local</code>, is never synced, and is never sent anywhere except to Anthropic&rsquo;s API on your behalf. A hard daily call budget applies, defaulting to five calls per day.</td></tr>
